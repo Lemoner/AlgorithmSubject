@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-const int maxn = 1000001;
+const int maxn = 2000005;
 
 int main(void){
 

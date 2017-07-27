@@ -1,32 +1,39 @@
-#include <stdio.h>
-#include <string.h>
-#include <iostream>
-#include<vector>
+#include<iostream>
+#include<string.h>
+const int maxn = 2e6 + 5;
 using namespace std;
-typedef long long int ll;
-char str[10];
-vector<int>p;
-int n,x,cnt,ans,d;
+int max(int a, int b)
+{
+	if (a > b)
+		return a;
+	else
+		return b;
+}
 int main()
 {
-    scanf("%d",&n);
-     cnt=1;
-     ans=0;
-    for(int i=1;i<=2*n;i++)
-    {
-       scanf("%s",str);
-        if(str[0]=='a')
-        {
-            scanf("%d",&x);
-            p.push_back(x);
-        }
-        else
-        {
-            if(p.empty());
-            else if(p.back()==cnt) p.pop_back();
-            else ans++,p.clear();
-            cnt++;
-        }
-    }
-    cout<<ans<<endl;
+	char s[maxn] = "", g[maxn] = "";
+	int n, k, m, x, u, si = -1, p, i;
+	cin >> n;
+	while (n--)
+	{
+		cin >> g;
+		cin >> k;
+		u = strlen(g);
+		p = 0;
+		while (k--)
+		{
+			cin >> x;
+			p = max(p, x);
+			for ( i = p; i < x + u; i++)
+				s[i] = g[i - x];
+			p = i - 1;
+		}
+		if (p > si)
+			si = p;
+	}
+	for (int i = 1; i <= si; i++)
+		if (s[i])
+			cout << s[i];
+		else
+			cout << 'a';
 }
