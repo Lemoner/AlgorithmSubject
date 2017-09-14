@@ -1,4 +1,4 @@
-package com.lmr.cf;
+package com.lmr.Codeforces;
 
 import java.util.Arrays;
 import java.util.Iterator;
