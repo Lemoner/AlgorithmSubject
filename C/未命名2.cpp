@@ -1,20 +1,18 @@
 #include<stdio.h>
 int main(void)
 {
-	int n;
-	scanf("%d",&n);
-	while(n--){
-		scanf("%d%d%d",num,x,y);
-		if(num>7){
-			x+=(num-7)*8;
-			num=7;
-		}
-		if(num<=7){
-			while(num>0){
-				x+=7-num+1;
-				num--;
-			}
+	int num;
+	int a[4001]={0};
+	
+	while(scanf("%d",&num)!=EOF){
+		a[num]++;
+//		printf("%d ",a[num]);
+	}
+	
+	for(int i=0;i<4001;i++){
+		if(a[i]>0){
+			printf("%d %d ",i,a[i]);
 		}
 	}
-	return 0;
+	
 }

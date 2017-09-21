@@ -1,8 +1,10 @@
 package com.lmr.LeetCode;
 
+import java.util.HashMap;
+
 public class LC_3 {
 	
-	public int lengthOfLongestSubstring(String s) {
+	public int lengthOfLongestSubstring1(String s) {
         int start,max;
         start=0;
         max=0;
@@ -21,5 +23,25 @@ public class LC_3 {
         
         return max;
     }
+	
+	public int lengthOfLongestSubstring2(String s) {
+		int start,max;
+        start=0;
+        max=0;
+        
+        HashMap<Character, Integer> map=new HashMap<>();
+        
+        for(int i=0;i<s.length();i++){
+        	if(map.containsKey(s.charAt(i))){
+        		start=map.get(s.charAt(i))+1;
+        	}
+        	map.put(s.charAt(i), i);
+        	
+        	max=Math.max(max, i-start+1);
+        }
+        
+        return max;
+    }
+	
 	
 }
