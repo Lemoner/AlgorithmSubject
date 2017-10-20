@@ -7,7 +7,7 @@ import java.util.Queue;
 
 public class LC_102 {
 
-	public List<List<Integer>> levelOrder(TreeNode root) {
+	public List<List<Integer>> levelOrder1(TreeNode root) {
 		
 		List<List<Integer>> result=new ArrayList<>();
 		Queue<TreeNode> queue=new ArrayDeque<TreeNode>();
@@ -39,6 +39,32 @@ public class LC_102 {
 		
 		return result;
 
+	}
+	
+	public List<List<Integer>> levelOrder2(TreeNode root) {
+		
+		List<List<Integer>> result=new ArrayList<>();
+		
+		DFSOrder(root,result,0);
+		
+		return result;
+		
+	}
+
+	private void DFSOrder(TreeNode root, List<List<Integer>> result, int depth) {
+		
+		if(root==null){
+			return ;
+		}
+		
+		if(depth>=result.size()){
+			result.add(new ArrayList<>());
+		}
+		
+		result.get(depth).add(root.val);
+		DFSOrder(root.left, result, depth+1);
+		DFSOrder(root.right, result, depth+1);
+		
 	}
 
 }

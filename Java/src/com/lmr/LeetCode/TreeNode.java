@@ -10,4 +10,47 @@ public class TreeNode {
 		val = x;
 	}
 
+	public static void Preorder(TreeNode root) {
+
+		if (root != null) {
+			System.out.print(root.val + " - ");
+			Preorder(root.left);
+			Preorder(root.right);
+		}
+
+	}
+
+	public static void Inorder(TreeNode root) {
+
+		if (root != null) {
+			Inorder(root.left);
+			System.out.print(root.val + " - ");
+			Inorder(root.right);
+		}
+
+	}
+
+	public static void Outorder(TreeNode root) {
+
+		if (root != null) {
+			Outorder(root.left);
+			Outorder(root.right);
+			System.out.print(root.val + " - ");
+		}
+
+	}
+	
+	public static void Allorder(TreeNode root){
+		
+		System.out.println("---------------");
+		Preorder(root);
+		System.out.println();
+		Inorder(root);
+		System.out.println();
+		Outorder(root);
+		System.out.println();
+		System.out.println("---------------");
+		
+	}
+
 }
