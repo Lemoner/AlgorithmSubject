@@ -22,6 +22,20 @@ public class LC_53 {
 		return maxsum;
 
 	}
+	
+	public int maxSubArray2(int[] nums) {
+		
+		int localmax=nums[0];
+		int targetmax=nums[0];
+		
+		for(int i=1;i<nums.length;i++){
+			localmax=Math.max(localmax+nums[i], nums[i]);
+			targetmax=Math.max(targetmax, localmax);
+		}
+
+		return targetmax;
+		
+	}
 
 	public static void main(String[] args) {
 
