@@ -43,10 +43,13 @@ public class TreeNode {
 	public static void Allorder(TreeNode root){
 		
 		System.out.println("---------------");
+		System.out.print("Preorder: ");
 		Preorder(root);
 		System.out.println();
+		System.out.print("Inorder: ");
 		Inorder(root);
 		System.out.println();
+		System.out.print("Outorder: ");
 		Outorder(root);
 		System.out.println();
 		System.out.println("---------------");

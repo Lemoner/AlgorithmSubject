@@ -97,11 +97,11 @@ public class LC_239 {
 		
 		LC_239 lc=new LC_239();
 		
-//		int[] nums={1,3,-1,-3,5,3,6,7};
-//		int k=3;
+		int[] nums={1,3,-1,-3,5,3,6,7};
+		int k=3;
 		
-		int[] nums={9,11};
-		int k=2;
+//		int[] nums={9,11};
+//		int k=2;
 		
 		System.out.println(Arrays.toString(lc.maxSlidingWindow(nums, k)));;
 		

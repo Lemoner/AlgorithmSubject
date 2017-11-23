@@ -1,7 +1,5 @@
 package com.lmr.LeetCode;
 
-import java.util.Arrays;
-
 public class LC_215 {
 
 	public int findKthLargest(int[] nums, int k) {
