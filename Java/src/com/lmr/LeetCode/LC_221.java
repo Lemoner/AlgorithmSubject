@@ -152,6 +152,15 @@ public class LC_221 {
                 if(matrix[i][j] == '0') continue;
                 int len = 1;
                 while(len <= sideTable[i][j] && matrix[i-len][j] == '1' && matrix[i][j-len] == '1') len++;
+                
+                for(int ti=0;ti<sideTable.length;ti++){
+                	for(int tj=0;tj<sideTable[0].length;tj++){
+                		System.out.print(sideTable[ti][tj]+"\t");
+                	}
+                	System.out.println();
+                }
+                System.out.println("----------------");
+                
                 sideTable[i+1][j+1] = len; 
                 if(max < len*len) max = len*len;
             }
