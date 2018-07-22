@@ -6,6 +6,65 @@ import java.util.Arrays;
  * ∂—≈≈–Ú
  */
 public class HeapSort {
+	
+	public void Sort1(int[] nums){
+		
+//		for(int i=0;i<nums.length;i++){
+//			ShitUp(nums, i);
+//		}
+		
+		for(int i=nums.length/2-1;i>=0;i--){
+			ShitDown(nums, i, nums.length);
+		}
+		
+		System.out.println(Arrays.toString(nums));
+		
+		for(int i=nums.length-1;i>=0;i--){
+			Swap(nums, i, 0);
+			ShitDown(nums, 0, i);
+		}
+		
+		System.out.println(Arrays.toString(nums));
+		
+	}
+	
+	public void ShitUp(int[] nums, int index){
+		while(index>0){
+			int parent=(index-1)>>>1;
+			if(nums[index]>nums[parent]){
+				Swap(nums, index, parent);
+				index=parent;
+			}
+			else{
+				break;
+			}
+		}
+	}
+	
+	public void ShitDown(int[] nums, int index, int limit){
+		int left,right,max;
+		while(index<limit){
+			left=(index<<1)+1;
+			right=left+1;
+			if(right<limit){
+				max=nums[left]>nums[right]?left:right;
+			}
+			else if(left<limit){
+				max=left;
+			}
+			else{
+				break;
+			}
+			if(nums[index]<nums[max]){
+				Swap(nums, index, max);
+				index=max;
+			}
+			else{
+				break;
+			}
+		}
+	}
+	
 
 	public void Sort(int[] nums){
 		
@@ -75,6 +134,10 @@ public class HeapSort {
 		int[] nums={4,6,8,5,9,3,4};
 		
 		heapSort.Sort(nums);
+		
+		int[] nums1={4,6,8,5,9,3,4};
+		
+		heapSort.Sort1(nums1);
 		
 		
 	}
