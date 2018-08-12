@@ -1,6 +1,5 @@
 package com.lmr.NK;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class AL_Main_1 {
@@ -13,13 +12,15 @@ public class AL_Main_1 {
 		
 		int n;
 		n=scanner.nextInt();
+		scanner.nextLine();
 		int[] x=new int[n];
 		int[] y=new int[n];
 		int[] arr=new int[n];
 		
 		for(int i=0;i<n;i++){
-			x[i]=scanner.nextInt();
-			y[i]=scanner.nextInt();
+			String[] str=scanner.nextLine().split(",");
+			x[i]=Integer.parseInt(str[0]);
+			y[i]=Integer.parseInt(str[1]);
 			arr[i]=i;
 		}
 		
@@ -47,7 +48,6 @@ public class AL_Main_1 {
 				sum+=len[arr[i]][arr[i+1]];
 			}
 			sum+=len[arr.length][arr[0]]+len[arr.length][arr[arr.length-1]];
-			System.out.println(sum+Arrays.toString(arr));
 			if(sum<min){
 				min=sum;
 			}
@@ -68,10 +68,6 @@ public class AL_Main_1 {
 		arr[x]=arr[x]^arr[y];
 		arr[y]=arr[x]^arr[y];
 		arr[x]=arr[x]^arr[y];
-//		int temp;
-//		temp=arr[x];
-//		arr[x]=arr[y];
-//		arr[y]=temp;
 	}
 	
 }
