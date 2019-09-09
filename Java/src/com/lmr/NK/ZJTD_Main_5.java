@@ -5,18 +5,18 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-class ZNode{
-	int s;
-	int t;
-	
-	public ZNode(int s, int t) {
-		this.s = s;
-		this.t = t;
-	}
-	
-}
-
 public class ZJTD_Main_5 {
+
+	static class ZNode{
+		int s;
+		int t;
+
+		public ZNode(int s, int t) {
+			this.s = s;
+			this.t = t;
+		}
+
+	}
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
